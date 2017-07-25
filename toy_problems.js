@@ -11,3 +11,27 @@ function digitalRoot(num) {
 }
 
 digitalRoot(163)
+
+
+// There is an array of non-negative integers. A second array is formed by
+// shuffling the elements of the first array and deleting a random element.
+// Given these two arrays, find which element is missing in the second array.
+
+let arrOne = ['Bob Ross', 'Tim Allen', 'Richard Simmons'];
+let arrTwo = ['Bob Ross', 'Richard Simmons', 'Tim Allen', 'big bird'];
+
+function missingPerson(arrOne, arrTwo) {
+  for(let item of arrOne) {
+    if(arrTwo.indexOf(item) === -1) {
+      return item;
+    }
+  }
+  for(let item of arrTwo) {
+    if(arrOne.indexOf(item) === -1) {
+      return item;
+    }
+  }
+  return "There are no missing elements."
+}
+
+missingPerson(arrOne, arrTwo);
