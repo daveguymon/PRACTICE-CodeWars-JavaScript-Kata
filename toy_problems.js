@@ -13,6 +13,8 @@ function digitalRoot(num) {
 digitalRoot(163)
 
 
+//********************
+
 // There is an array of non-negative integers. A second array is formed by
 // shuffling the elements of the first array and deleting a random element.
 // Given these two arrays, find which element is missing in the second array.
@@ -35,3 +37,39 @@ function missingPerson(arrOne, arrTwo) {
 }
 
 missingPerson(arrOne, arrTwo);
+
+
+//********************
+
+// https://www.codewars.com/kata/band-name-generator/train/javascript
+// My friend wants a new band name for her band. She like bands that use the formula: 'The' + a noun with first letter capitalized.
+
+// dolphin -> The Dolphin
+
+// However, when a noun STARTS and ENDS with the same letter, she likes to repeat the noun twice and connect them together with the first and last letter, combined into one word like so (WITHOUT a 'The' in front):
+
+// alaska -> Alaskalaska
+
+// europe -> Europeurope
+
+// Can you write a function that takes in a noun as a string, and returns her preferred band name written as a string?
+
+function bandNameGenerator(str) {
+  str = str.toLowerCase();
+
+  let first = str.charAt(0);
+  let last = str.charAt(str.length-1);
+  let baseStr = str.charAt(0).toUpperCase() + str.substr(1)
+  let spliced = str.split('').splice(1).join('')
+  if(first === last){
+    return baseStr+spliced;
+  } else {
+    return 'The ' + baseStr
+  }
+
+}
+
+bandNameGenerator('Tart')//, 'Tartart')
+
+
+//********************
