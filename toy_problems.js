@@ -100,3 +100,61 @@ function findWhere(array, criteria) {
 }
 
 //********************
+
+//Reducing Properties
+//
+//Use the 'reduce' helper to create an object that tallies the number of sitting and standing desks.  The object returned should have the form '{ sitting: 3, standing: 2 }'.  The initial value has been provided to you.
+//Hint: Don't forget to return the accumulator object (the first argument to the iterator function)
+
+var desks = [
+  { type: 'sitting' },
+  { type: 'standing' },
+  { type: 'sitting' },
+  { type: 'sitting' },
+  { type: 'standing' }
+];
+
+var deskTypes = desks.reduce(function(prev, desk) {
+    if(desk.type === 'sitting'){
+        ++prev.sitting;
+    }
+    if(desk.type==='standing'){
+        ++prev.standing;
+    }
+    return prev;
+}, { sitting: 0, standing: 0 });
+
+
+//********************
+
+// Your task is to make a function that can take any non-negative integer as a argument and return it with it's digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+//
+// Examples:
+//
+// Input: 21445 Output: 54421
+//
+// Input: 145263 Output: 654321
+//
+// Input: 1254859723 Output: 9875543221
+
+function descendingOrder(n){
+  return n.toString().split('').sort((a,b) => b-a).join('') * 1;
+}
+
+//********************
+
+// You need to create a function that converts the input into this format, with the output being the same string expect there is a pattern of uppercase and lowercase letters.
+
+function spongeMeme(sentence) {
+  const solution = sentence.toLowerCase().split('').map( (letter, index) => {
+    if(index % 2 === 0) {
+      return letter.toUpperCase();
+    } else {
+      return letter;
+    }
+  }).join('');
+
+  return solution;
+}
+
+spongeMeme("stop Making spongebob Memes!")
