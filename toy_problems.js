@@ -1,3 +1,22 @@
+// Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+//
+// Example:
+//
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+// The returned format must be correct in order to complete this challenge.
+// Don't forget the space after the closing parenthesis!
+
+function createPhoneNumber(numbers){
+  var firstSet = parseInt(numbers.slice(0,1) + numbers.slice(1,2) + numbers.slice(2,3));
+  var secSet = parseInt(numbers.slice(3,4) + numbers.slice(4,5) + numbers.slice(5,6));
+  var thirdSet = parseInt(numbers.slice(6,7) + numbers.slice(7,8) + numbers.slice(8,9) + numbers.slice(9,10));
+
+  var phoneNumber = "("+firstSet+")" + " " + secSet + "-" + thirdSet;
+  return phoneNumber;
+}
+
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+
 // Task:
 //
 // Your task is to write a function which returns the sum of following series upto nth term(parameter).
@@ -28,7 +47,7 @@ function SeriesSum(n){
   let decimals = fractionsArr.map(value => {
     return 1/value
   })
-  
+
   let sum = decimals.reduce(function(sum, value) {
     return sum + value;
   }, 0)
