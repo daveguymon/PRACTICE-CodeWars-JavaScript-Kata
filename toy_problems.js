@@ -1,3 +1,23 @@
+// This time no story, no theory. The examples below show you how to write function accum:
+//
+// Examples:
+//
+// accum("abcd");    // "A-Bb-Ccc-Dddd"
+// accum("RqaEzty"); // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt");    // "C-Ww-Aaa-Tttt"
+// The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+function accum(s) {
+  return s.split('').map(function(letter, index){
+	  return letter.repeat(index + 1).toLowerCase();
+	}).map(function(letters){
+	  return letters.substring(0,1).toUpperCase() + letters.substring(1).toLowerCase()
+	}).join('-')
+
+}
+
+accum("abcd");    // "A-Bb-Ccc-Dddd"
+
 // Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
 //
 // Example:
