@@ -1,3 +1,37 @@
+// Longest Palindrome
+//
+// Find the length of the longest substring in the given string s that is the same in reverse.
+//
+// As an example, if the input was “I like racecars that go fast”, the substring (racecar) length would be 7.
+//
+// If the length of the input string is 0, return value must be 0.
+//
+// Example:
+//
+// "a" -> 1
+// "aab" -> 2
+// "abcde" -> 1
+// "zzbaabcd" -> 4
+// "" -> 0
+
+longestPalindrome=function(s){
+
+  var solution = 0;
+
+  for(var i = 0; i <= s.length; i++){
+    for(var j = 1; j <= s.length; j++){
+      if(s.substring(i, j) == s.substring(i,j).split('').reverse().join('')) {
+        if(s.substring(i,j).length > solution) {
+          solution = s.substring(i,j).length;
+        }
+      } else {
+        null;
+      }
+    }
+  }
+  return solution;
+}
+
 // Your task is to write function findSum.
 //
 // Upto and including n, this function will return the sum of all multiples of 3 and 5.
