@@ -1,3 +1,27 @@
+// Your task is to write function findSum.
+//
+// Upto and including n, this function will return the sum of all multiples of 3 and 5.
+//
+// For example:
+//
+// findSum(5) should return 8 (3 + 5)
+//
+// findSum(10) should return 33 (3 + 5 + 6 + 9 + 10)
+
+function findSum(n) {
+  let nums = [];
+
+  for(var i = 3; i <= n; i++){
+    i % 3 === 0 || i % 5 === 0 ? nums.push(i) : null;
+  }
+
+  let solution = nums.reduce((curr, next) => {
+    return curr += next
+  }, 0)
+
+  return solution;
+}
+
 // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 //
 // Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
