@@ -1,3 +1,193 @@
+//Functional Addition - https://www.codewars.com/kata/538835ae443aae6e03000547
+
+// Create a function add(n)/Add(n) which returns a function that always adds n to any number
+//
+// var addOne = add(1);
+// addOne(3); // 4
+//
+// var addThree = add(3);
+// addThree(3); // 6
+
+function add(n) {
+  return function(num) {
+    return num + n;
+  }
+}
+
+//Square Every Digit - https://www.codewars.com/kata/546e2562b03326a88e000020
+
+// Welcome. In this kata, you are asked to square every digit of a number.
+//
+// For example, if we run 9119 through the function, 811181 will come out.
+//
+// Note: The function accepts an integer and returns an integer
+
+function squareDigits(int) {
+  var toString = String(int);
+
+  var squared = toString.split('');
+
+  var squaredArr = squared.map(function(val) {
+    return val * val;
+  })
+  var joined = squaredArr.join('');
+  return Number(joined);
+}
+
+//Truthy And Falsey - https://www.codewars.com/kata/595c2988d946a13298000157
+
+// You are given two empty arrays (truthy and falsy) and you have to fill this array with at least 5 elements in each which will evaluate to true or false accordingly.
+
+const truthy = ['dave', true, 30, 'January 20', [1,2,3]];
+const falsy = [NaN, false, 0, '', undefined];
+
+//Vowel Count - https://www.codewars.com/kata/54ff3102c1bad923760001f3
+
+// Return the number (count) of vowels in the given string.
+//
+// We will consider a, e, i, o, and u as vowels for this Kata.
+
+function getCount(str) {
+  var vowels = ['a','e','i','o','u'];
+  var count = 0;
+  var strArr = str.split('');
+
+  for(var i = 0; i < strArr.length; i++) {
+    for(var j = 0; j < vowels.length; j++) {
+      if(strArr[i] === vowels[j]) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+//No Ifs, No Buts - https://www.codewars.com/kata/592915cc1fad49252f000006
+
+// Write a function that accepts two parameters (a and b) and says whether a is smaller than, bigger than, or equal to b.
+//
+// Here is an example code:
+//
+// var noIfsNoButs = function (a,b) {
+//   if(a > b) return a + " is greater than " + b
+//   else if(a < b) return a + " is smaller than " + b
+//   else if(a == b) return a + " is equal to " + b
+// }
+// There's only one problem...
+//
+// You can't use if statements, and you can't use shorthands like (a < b)?true:false;
+//
+// in fact the word "if" and the character "?" are not allowed in the code.
+
+var noIfsNoButs = function (a,b) {
+
+switch(true) {
+    case a > b:
+      return a+ " is greater than " +b;
+    case a < b:
+      return a+ " is smaller than " +b;
+    case a === b:
+      return a+ " is equal to " +b;
+  }
+}
+
+//Printer Errors - https://www.codewars.com/kata/56541980fa08ab47a0000040
+
+// In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
+//
+// The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+//
+// Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g. aaaxbbbbyyhwawiwjjjwwm.
+//
+// You have to write a function printer_error which given a string will output the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+//
+// The string has a length greater or equal to one and contains only letters from ato z.
+//
+// #Examples:
+//
+// s="aaabbbbhaijjjm"
+// error_printer(s) => "0/14"
+//
+// s="aaaxbbbbyyhwawiwjjjwwm"
+// error_printer(s) => "8/22"
+
+function printerError(s){
+  var numerator = 0;
+  var denominator = s.length;
+
+  var arr = s.split('');
+
+
+  for(var i = 0; i < arr.length; i++) {
+    switch(arr[i]){
+      case 'n':
+        numerator++;
+        break;
+      case 'o':
+        numerator++;
+        break;
+      case 'p':
+        numerator++;
+        break;
+      case 'q':
+        numerator++;
+        break;
+      case 'r':
+        numerator++;
+        break;
+      case 's':
+        numerator++;
+        break;
+      case 't':
+        numerator++;
+        break;
+      case 'u':
+        numerator++;
+        break;
+      case 'v':
+        numerator++;
+        break;
+      case 'w':
+        numerator++;
+        break;
+      case 'x':
+        numerator++;
+        break;
+      case 'y':
+        numerator++;
+        break;
+      case 'z':
+        numerator++;
+        break;
+    }
+
+  }
+  return numerator + "/" + denominator;
+}
+
+//Find Divisors Number - https://www.codewars.com/kata/542c0f198e077084c0000c2e
+
+// Find the number of divisors of a positive integer n.
+//
+// Example:
+//
+// divisors 4  = 3 -- 1, 2, 4
+// divisors 5  = 2 -- 1, 5
+// divisors 12 = 6 -- 1, 2, 3, 4, 6, 12
+// divisors 30 = 8 -- 1, 2, 3, 5, 6, 10, 15, 30
+
+function getDivisorsCnt(n){
+
+    var numsArr = [];
+    for (var i = 0; i <= n; i++) {
+    numsArr.push(i);
+    }
+   return numsArr.filter(function(num) {
+      return n % num === 0;
+    }).length
+
+}
+
 //Highest and Lowest - https://www.codewars.com/kata/highest-and-lowest/javascript
 
 // In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
