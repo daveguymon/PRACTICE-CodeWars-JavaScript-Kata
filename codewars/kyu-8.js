@@ -1,3 +1,32 @@
+// Calculate BMI - https://www.codewars.com/kata/57a429e253ba3381850000fb
+
+// Write function bmi that calculates body mass index (bmi = weight / height ^ 2).
+//
+// if bmi <= 18.5 return "Underweight"
+//
+// if bmi <= 25.0 return "Normal"
+//
+// if bmi <= 30.0 return "Overweight"
+//
+// if bmi > 30 return "Obese"
+
+function bmi(weight, height) {
+  var mass = weight / (height * height);
+
+  if(mass <= 18.5){
+    return "Underweight";
+  }
+  else if(mass <= 25.0){
+    return "Normal";
+  }
+  else if(mass <= 30.0){
+    return "Overweight";
+  }
+  else {
+    return "Obese";
+  }
+}
+
 //Sum Without Highest Or Lowest Number - https://www.codewars.com/kata/sum-without-highest-and-lowest-number/javascript
 
 // Sum all the numbers of the array (in F# and Haskell you get a list) except the highest and the lowest element (the value, not the index!).
@@ -27,4 +56,4 @@ if(!array || array.length < 2) {
    return a + b;
  }, 0);
 return solution;
-} 
+}
