@@ -1,3 +1,42 @@
+//Highest and Lowest - https://www.codewars.com/kata/highest-and-lowest/javascript
+
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+// Example:
+
+// highAndLow("1 2 3 4 5"); // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+// Notes:
+
+// All numbers are valid Int32, no need to validate them.
+// There will always be at least one number in the input string.
+// Output string must be two numbers separated by a single space, and highest number is first.
+
+//Convert string of numbers to array by splitting at spaces (' ')
+//Sort numbers from highest to lowest
+//Check to see if only one value
+//If one value, return single value as solution, else
+//Extract highest number (index 0) to new array
+//Extract lowest number (last index) to same array
+//Join array with space between values
+//Return solution as a string
+
+
+
+function highAndLow(numbers){
+  var split = numbers.split(' ').sort((a,b) => b-a);
+  var highestAndLowest = [];
+
+  highestAndLowest.push(split[0]);
+  highestAndLowest.push(split[split.length-1]);
+
+  return highestAndLowest.toString().replace(',', ' ');
+}
+
+highAndLow('2 50 -8 0 33 -17') //"50 -17"
+
+
 //Band Name Generator - https://www.codewars.com/kata/59727ff285281a44e3000011
 
 // My friend wants a new band name for her band. She like bands that use the formula: 'The' + a noun with first letter capitalized.
