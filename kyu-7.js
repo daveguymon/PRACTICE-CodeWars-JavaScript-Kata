@@ -1,3 +1,37 @@
+//Remove the Minimun - https://www.codewars.com/kata/remove-the-minimum/javascript
+
+// Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+//
+// Don't change the order of the elements that are left.
+//
+// Examples
+//
+// removeSmallest([1,2,3,4,5]) = [2,3,4,5]
+// removeSmallest([5,3,2,1,4]) = [5,3,2,4]
+// removeSmallest([2,2,1,2,1]) = [2,2,2,1]
+
+function removeSmallest(numbers) {
+  var numsArr = numbers;
+  var start = numsArr[0];
+
+  if(numsArr.length === 0) {
+    return numsArr;
+  } else {
+    for(var i = 1; i < numsArr.length; i++) {
+      if (numsArr[i] < start) {
+        start = numsArr[i];
+      }
+    }
+
+    var indexToRemove =  numsArr.indexOf(start);
+    var solution = numsArr.filter((elem, indx, arr) => {
+      return indx !== indexToRemove;
+    });
+
+    return solution;
+  }
+}
+
 //Functional Addition - https://www.codewars.com/kata/538835ae443aae6e03000547
 
 // Create a function add(n)/Add(n) which returns a function that always adds n to any number
