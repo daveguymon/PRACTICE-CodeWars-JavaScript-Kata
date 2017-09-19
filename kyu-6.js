@@ -1,3 +1,32 @@
+// Does my number look big in this? - https://www.codewars.com/kata/does-my-number-look-big-in-this/javascript
+
+// A Narcissistic Number is a number which is the sum of its own digits, each raised to the power of the number of digits.
+//
+// For example, take 153 (3 digits):
+//
+//     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+// and 1634 (4 digits):
+//
+//     1^4 + 6^4 + 3^4 + 4^4 = 1 + 1296 + 81 + 256 = 1634
+// The Challenge:
+//
+// Your code must return true or false depending upon whether the given number is a Narcissistic number.
+//
+// Error checking for text strings or other invalid inputs is not required, only valid integers will be passed into the function.
+
+function narcissistic( value ) {
+  var numArray = value.toString().split('');
+  var exponent = numArray.length;
+  var newNums = numArray.map(number => {
+    return Math.pow(number, exponent)
+  })
+  var sum = newNums.reduce((a,b) => {
+    return a + b;
+  }, 0);
+
+  return sum === value ? true : false;
+}
+
 //Is A Number Prime? - https://www.codewars.com/kata/5262119038c0985a5b00029f/solutions/javascript
 
 // Define a function isPrime/is_prime() that takes one integer argument and returns true/True or false/False depending on if the integer is a prime.
