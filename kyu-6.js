@@ -1,3 +1,29 @@
+// Find the Parity Outlier - https://www.codewars.com/kata/find-the-parity-outlier/javascript
+
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns N.
+//
+// For example:
+//
+// [2, 4, 0, 100, 4, 11, 2602, 36]
+//
+// Should return: 11
+//
+// [160, 3, 1719, 19, 11, 13, -21]
+//
+// Should return: 160
+
+function findOutlier(integers){
+  var evens = [];
+  var odds = [];
+
+  var categories = integers.map(number => {
+    return number % 2 === 0 ? evens.push(number) : odds.push(number);
+  })
+
+  return evens.length === 1 ? evens[0] : odds[0]
+
+}
+
 // Who Likes It? - http://www.codewars.com/kata/who-likes-it/javascript
 
 // You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
