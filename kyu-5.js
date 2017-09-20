@@ -1,3 +1,25 @@
+// Where My Anagrams At? - https://www.codewars.com/kata/where-my-anagrams-at/javascript
+
+// Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
+//
+// anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+//
+// anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']) => ['carer', 'racer']
+//
+// anagrams('laser', ['lazing', 'lazy',  'lacer']) => []
+
+function anagrams(word, words) {
+  var sorted = word.split('').sort().join('');
+  var solution =[];
+
+  for(var i = 0; i < words.length; i++){
+    if(sorted === words[i].split('').sort().join('')){
+      solution.push(words[i])
+    }
+  }
+  return solution;
+}
+
 // Moving Zeros To The End - https://www.codewars.com/kata/moving-zeros-to-the-end/javascript
 
 // Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
