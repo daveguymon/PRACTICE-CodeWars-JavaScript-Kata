@@ -1,3 +1,30 @@
+//Convert String to Camel Case - https://www.codewars.com/kata/convert-string-to-camel-case/train/javascript
+
+// Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized.
+//
+// Examples:
+//
+// // returns "theStealthWarrior"
+// toCamelCase("the-stealth-warrior")
+//
+// // returns "TheStealthWarrior"
+// toCamelCase("The_Stealth_Warrior")
+
+function toCamelCase(str){
+  if(!str) {
+    return '';
+  } else {
+    var replaced = str.replace(/-|_/g, ' ').split(' ');
+    var solution = [replaced[0]];
+
+    for(var i = 1; i < replaced.length; i++){
+       solution.push(replaced[i].substring(0,1).toUpperCase()+replaced[i].substring(1).toLowerCase());
+    }
+  }
+
+  return solution.join('');
+}
+
 // Where My Anagrams At? - https://www.codewars.com/kata/where-my-anagrams-at/javascript
 
 // Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. For example:
