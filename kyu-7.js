@@ -1,3 +1,30 @@
+// Sum Times Tables - https://www.codewars.com/kata/sum-times-tables/train/javascript
+
+// Write a function sumTimesTables which sums the result of the sums of the elements specified in tables multiplied by all the numbers in between min and max including themselves.
+//
+// For example, for sumTimesTables([2,5],1,3) the result should be the same as
+//
+// 2*1 + 2*2 + 2*3 +
+// 5*1 + 5*2 + 5*3
+// i.e. the table of two from 1 to 3 plus the table of five from 1 to 3
+//
+// All the numbers are integers but you must take in account:
+//
+// tables could be empty.
+// min could be negative.
+// max could be really big.
+
+function sumTimesTables(tables, min, max){
+  var prodArray =[];
+
+  var products = tables.map(element => {
+    for(var i = min; i <= max; i++){
+      prodArray.push(element * i);
+    }
+  })
+  return prodArray.reduce((a,b) => a+b,0);
+}
+
 //Disemvowell Trolls - https://www.codewars.com/kata/disemvowel-trolls/javascript
 
 // Trolls are attacking your comment section!
