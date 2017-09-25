@@ -1,3 +1,28 @@
+// Take A Ten Minute Walk - http://www.codewars.com/kata/take-a-ten-minute-walk/javascript
+
+// You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+//
+// Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
+
+function isValidWalk(walk) {
+  var count = {};
+  var e = [];
+  var w = [];
+  var n = [];
+  var s = [];
+
+  if(walk.length !== 10) {
+    return false;
+  } else {
+    n = walk.filter(dir => dir === 'n');
+    s = walk.filter(dir => dir === 's');
+    e = walk.filter(dir => dir === 'e');
+    w = walk.filter(dir => dir === 'w');
+  }
+
+  return n.length === s.length && e.length === w.length ? true : false;
+}
+
 //Dubstep - https://www.codewars.com/kata/dubstep/javascript
 
 // Polycarpus works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.
