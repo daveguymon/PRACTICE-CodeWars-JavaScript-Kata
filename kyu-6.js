@@ -1,3 +1,34 @@
+// Format Words Into a Sentence - https://www.codewars.com/kata/format-words-into-a-sentence/javascript
+
+// Complete the method so that it formats the words into a single comma separated value. The last word should be separated by the word 'and' instead of a comma. The method takes in an array of strings and returns a single formatted string. Empty string values should be ignored. Empty arrays or null/nil values being passed into the method should result in an empty string being returned.
+//
+// formatWords(['ninja', 'samurai', 'ronin']) // should return "ninja, samurai and ronin"
+// formatWords(['ninja', '', 'ronin']) // should return "ninja and ronin"
+// formatWords([]) // should return ""
+
+function formatWords(words){
+
+  if(!words){
+    return '';
+  } else {
+    var filtered = words.filter(word => {
+      return word !== '';
+    });
+
+    if(filtered.length === 0){
+      return '';
+    }  else if(filtered.length < 2){
+      return filtered[0];
+    } else if (filtered.length < 3){
+      return filtered[0] + " and " + filtered[1]
+    } else {
+      var sliced = filtered.slice(filtered.length-1)
+      var spliced = filtered.splice(filtered.length-1)
+      return filtered.join(", ") + " and " + sliced
+    }
+  }
+}
+
 // Find The Odd Int - http://www.codewars.com/kata/find-the-odd-int/javascript
 
 // Given an array, find the int that appears an odd number of times.
