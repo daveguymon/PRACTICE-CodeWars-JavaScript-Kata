@@ -1,3 +1,22 @@
+// Insert Dashes - http://www.codewars.com/kata/insert-dashes/javascript
+
+// Write a function insertDash(num)/InsertDash(int num) that will insert dashes ('-') between each two odd numbers in num. For example: if num is 454793 the output should be 4547-9-3. Don't count zero as an odd number.
+
+function insertDash(num) {
+var solution =[]
+
+  var arr = num.toString().split('');
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] % 2 !== 0 && arr[i +1] % 2 !== 0){
+    solution.push(arr[i], '-');
+    } else {
+      solution.push(arr[i])
+    }
+  }
+
+  return solution[solution.length-1] === '-' ? solution.slice(0, solution.length - 1).join('') : solution.join('');
+}
+
 //Categorize New Member - https://www.codewars.com/kata/categorize-new-member/train/javascript
 
 // The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
