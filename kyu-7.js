@@ -1,3 +1,11 @@
+// You're A Square - https://www.codewars.com/kata/youre-a-square/javascript
+
+// Given an integral number, determine if it's a square number.
+
+var isSquare = function(n){
+  return Math.sqrt(n) % 1 === 0 ? true : false;
+}
+
 // Insert Dashes - http://www.codewars.com/kata/insert-dashes/javascript
 
 // Write a function insertDash(num)/InsertDash(int num) that will insert dashes ('-') between each two odd numbers in num. For example: if num is 454793 the output should be 4547-9-3. Don't count zero as an odd number.
