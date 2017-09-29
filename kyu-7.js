@@ -1,3 +1,23 @@
+// Exes and Ohs - https://www.codewars.com/kata/exes-and-ohs/javascript
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contains any char.
+//
+// Examples input/output:
+//
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+
+function XO(str) {
+    str = str.toLowerCase();
+    let ex = str.split('').filter(char => char === 'x'),
+    oh = str.split('').filter(char => char === 'o');
+
+    return ex.length === oh.length ? true : false;
+}
+
 // Beginner Series #3 Sum of Numbers - https://www.codewars.com/kata/55f2b110f61eb01779000053/solutions/javascript
 
 // Given two integers a and b, which can be positive or negative, find the sum of all the numbers between including them too and return it. If the two numbers are equal return a or b.
