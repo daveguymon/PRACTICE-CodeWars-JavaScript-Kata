@@ -1,3 +1,33 @@
+// Beginner Series #3 Sum of Numbers - https://www.codewars.com/kata/55f2b110f61eb01779000053/solutions/javascript
+
+// Given two integers a and b, which can be positive or negative, find the sum of all the numbers between including them too and return it. If the two numbers are equal return a or b.
+//
+// Note: a and b are not ordered!
+//
+// Examples
+//
+// GetSum(1, 0) == 1   // 1 + 0 = 1
+// GetSum(1, 2) == 3   // 1 + 2 = 3
+// GetSum(0, 1) == 1   // 0 + 1 = 1
+// GetSum(1, 1) == 1   // 1 Since both are same
+// GetSum(-1, 0) == -1 // -1 + 0 = -1
+// GetSum(-1, 2) == 2  // -1 + 0 + 1 + 2 = 2
+
+function GetSum( a,b ){
+   var min = Math.min(a,b);
+   var max = Math.max(a,b);
+   var nums = [];
+
+   if(a === b) {
+     return a;
+   } else {
+     for(var i = min; i <= max; i++){
+       nums.push(i);
+     }
+   }
+   return nums.reduce((a,b) => a + b, 0);
+}
+
 // Jaden-casing Strings - http://www.codewars.com/kata/jaden-casing-strings/javascript
 
 // Jaden Smith, the son of Will Smith, is the star of films such as The Karate Kid (2010) and After Earth (2013). Jaden is also known for some of his philosophy that he delivers via Twitter. When writing on Twitter, he is known for almost always capitalizing every word.
