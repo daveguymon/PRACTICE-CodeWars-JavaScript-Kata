@@ -1,3 +1,18 @@
+// Bit Counting - https://www.codewars.com/kata/bit-counting/javascript
+
+// Write a function that takes an (unsigned) integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
+//
+// Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+
+var countBits = function(n) {
+  let binary = n.toString(2),
+      binaryArr = binary.split('');
+      solution = [];
+
+  solution = binaryArr.filter(val => val === '1');
+  return solution.length;
+};
+
 // Tribonacci Sequence - https://www.codewars.com/kata/tribonacci-sequence/javascript
 
 // As the name may already reveal, it works basically like a Fibonacci, but summing the last 3 (instead of 2) numbers of the sequence to generate the next. And, worse part of it, regrettably I won't get to hear non-native Italian speakers trying to pronounce it :(
