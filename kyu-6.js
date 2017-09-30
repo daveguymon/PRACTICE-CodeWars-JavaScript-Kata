@@ -1,3 +1,33 @@
+//Change It Up - https://www.codewars.com/kata/change-it-up/javascript
+
+// Create a function that takes a string as a parameter and does the following, in this order:
+//
+// replaces every letter with the letter following it in the alphabet (see note below)
+// makes any vowels capital
+// makes any consonants lower case
+// Note: the alphabet should wrap around, so Z becomes A
+//
+// So, for example the string "Cat30" would return "dbU30" (Cat30 --> Dbu30 --> dbU30)
+
+function changer(str) {
+  let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  let letterArr = str.toLowerCase().split('');
+  let newWordArr = [];
+
+  for(var i = 0; i < letterArr.length; i++){
+    if(alphabet[alphabet.indexOf(letterArr[i])] && alphabet.indexOf(letterArr[i]) <= 24) {
+       newWordArr.push(alphabet[alphabet.indexOf(letterArr[i]) + 1]);
+    } else if (letterArr[i] == 'z') {
+      newWordArr.push('a');
+    } else {
+      newWordArr.push(letterArr[i]);
+    }
+  }
+
+  let solutionArr = newWordArr.map(letter => letter.match(/[aeiou]/) ? letter.toUpperCase() : letter.toLowerCase())
+  return solutionArr.join('');
+}
+
 // Bit Counting - https://www.codewars.com/kata/bit-counting/javascript
 
 // Write a function that takes an (unsigned) integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
