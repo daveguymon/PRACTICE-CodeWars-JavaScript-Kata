@@ -1,3 +1,30 @@
+// Replace With Alphabet Position - https://www.codewars.com/kata/replace-with-alphabet-position/javascript
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+//
+// If anything in the text isn't a letter, ignore it and don't return it.
+//
+// a being 1, b being 2, etc.
+//
+// As an example:
+//
+// alphabet_position("The sunset sets at twelve o' clock.")
+// Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" as a string.
+
+function alphabetPosition(text) {
+  text = text.toLowerCase().split('');
+
+  let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+      lettersOnly = text.filter(char => char.match(/[a-z]/)),
+      solution = [];
+
+      for(var i = 0; i < lettersOnly.length; i++){
+        solution.push(alphabet.indexOf(lettersOnly[i])+1);
+      }
+
+      return solution.join(' ');
+}
+
 // Find the Divisors - https://www.codewars.com/kata/find-the-divisors/javascript
 
 // Create a function named divisors/Divisors that takes an integer and returns an array with all of the integer's divisors(except for 1 and the number itself). If the number is prime return the string '(integer) is prime' (null in C#) (use Either String a in Haskell and Result<Vec<u32>, String> in Rust).
