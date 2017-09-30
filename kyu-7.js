@@ -1,3 +1,26 @@
+// Reverse Factorials - https://www.codewars.com/kata/58067088c27998b119000451
+
+// Your challenge is to create a function that takes any number and returns the number that it is a factorial of. So, if your function receives 120, it should return "5!" (as a string).
+//
+// Of course, not every number is a factorial of another. In this case, your function would return "None" (as a string).
+//
+// Examples
+//
+// 120 will return "5!"
+// 24 will return "4!"
+// 150 will return "None"
+
+function reverseFactorial(num) {
+  let factorial = 1;
+
+  while (num / factorial > 1) {
+    num /= factorial;
+    factorial++;
+  }
+  
+  return factorial === num ? factorial+'!' : 'None';
+}
+
 // Exes and Ohs - https://www.codewars.com/kata/exes-and-ohs/javascript
 
 // Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contains any char.
