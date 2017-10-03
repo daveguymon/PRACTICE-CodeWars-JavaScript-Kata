@@ -1,3 +1,39 @@
+// Format a string of names like 'Bart, Lisa & Maggie'. - https://www.codewars.com/kata/format-a-string-of-names-like-bart-lisa-and-maggie/javascript
+
+// Given: an array containing hashes of names
+//
+// Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+//
+// Example:
+//
+// list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Maggie'} ])
+// // returns 'Bart, Lisa & Maggie'
+//
+// list([ {name: 'Bart'}, {name: 'Lisa'} ])
+// // returns 'Bart & Lisa'
+//
+// list([ {name: 'Bart'} ])
+// // returns 'Bart'
+//
+// list([])
+// // returns ''
+
+function list(names){
+  let namesArr = names.map(name => name.name);
+
+  if(namesArr.length === 0){
+    return '';
+  } else if(namesArr.length === 1) {
+    return namesArr[0];
+  } else if(namesArr.length === 2) {
+    return namesArr[0] + " & " + namesArr[1];
+  } else {
+    let last =namesArr[namesArr.length -2 ] + ' & ' + namesArr[namesArr.length -1];
+    let rest = namesArr.splice(0, namesArr.length - 2);
+    return rest.concat(last).join(', ')
+  }
+}
+
 // Playing with Digits - https://www.codewars.com/kata/5552101f47fc5178b1000050/solutions/javascript
 
 // Some numbers have funny properties. For example:
