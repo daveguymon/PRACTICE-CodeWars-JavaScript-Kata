@@ -1,3 +1,44 @@
+// Two Joggers - https://www.codewars.com/kata/two-joggers/javascript
+
+// Your job is to complete the function nbrOfLaps(x, y) that, given the length of the laps for Bob and Charles, finds the number of laps that each jogger has to complete before they meet each other again, at the same time, at the start.
+//
+// The function takes two arguments:
+//
+// The length of Bob's lap (larger than 0)
+// The length of Charles' lap (larger than 0)
+//
+// The function should return an array (Tuple<int, int> in C#) containing exactly two numbers:
+//
+// The first number is the number of laps that Bob has to run
+// The second number is the number of laps that Charles has to run
+//
+// Examples:
+//
+// nbrOfLaps(5, 3); // returns [3, 5]
+// nbrOfLaps(4, 6); // returns [3, 2]
+
+var nbrOfLaps = function (x, y) {
+let min = Math.min(x,y),
+    max = Math.max(x,y);
+
+  function gcd(x,y) {
+    min = Math.abs(min);
+    max = Math.abs(max);
+    console.log(min)
+
+    while(max){
+      var t = max;
+      max = min % max;
+      min = t;
+    }
+    return min;
+  }
+
+  let lcm = (!min || !max) ? 0 : Math.abs((min * max) / gcd(min, max));
+
+  return [lcm / x, lcm / y]
+}
+
 //Palindrome Chain Length - https://www.codewars.com/kata/palindrome-chain-length/train/javascript
 
 // Write a method palindrome_chain_length which takes a positive number and returns the number of special steps needed to obtain a palindrome. The special step is: "reverse the digits, and add to the original number". If the resulting number is not a palindrome, repeat the procedure with the sum until the resulting number is a palindrome.
