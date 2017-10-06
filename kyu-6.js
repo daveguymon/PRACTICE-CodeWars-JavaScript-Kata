@@ -1,3 +1,24 @@
+// Equal Sides of An Array - https://www.codewars.com/kata/equal-sides-of-an-array/javascript
+
+// You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N. If there is no index that would make this happen, return -1.
+
+function findEvenIndex(arr){
+  let totalSum,
+      sumUp = 0;
+
+  totalSum = arr.reduce((a,b) => a + b);
+
+  for(let i = 0; i < arr.length; i++){
+    totalSum -= arr[i];
+    if(totalSum === sumUp) {
+      return i;
+    } else {
+      sumUp += arr[i];
+    }
+  }
+  return -1;
+}
+
 // Format a string of names like 'Bart, Lisa & Maggie'. - https://www.codewars.com/kata/format-a-string-of-names-like-bart-lisa-and-maggie/javascript
 
 // Given: an array containing hashes of names
