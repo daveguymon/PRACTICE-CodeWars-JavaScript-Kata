@@ -1,3 +1,21 @@
+// No Zeros for Heros - https://www.codewars.com/kata/no-zeros-for-heros/javascript
+
+// Numbers ending with zeros are boring.
+//
+// They might be fun in your world, but not here.
+//
+// Get rid of them. Only the ending ones.
+//
+// 1450 -> 145
+// 960000 -> 96
+// 1050 -> 105
+// -1050 -> -105
+// Zero alone is fine, don't worry about it. Poor guy anyway
+
+function noBoringZeros(n) {
+  return String(n).length > 1 ? Number(String(n).replace(/0+$/,'')) : n;
+}
+
 //Opposite Number - https://www.codewars.com/kata/opposite-number/javascript
 
 // Very simple, given a number, find its opposite.
