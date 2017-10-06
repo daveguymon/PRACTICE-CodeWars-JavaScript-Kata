@@ -1,3 +1,23 @@
+// Credit Card Mask - https://www.codewars.com/kata/credit-card-mask/javascript
+
+// Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+//
+// Your task is to write a function maskify, which changes all but the last four characters into '#'.
+//
+// Examples
+//
+// maskify("4556364607935616") == "############5616"
+// maskify(     "64607935616") ==      "#######5616"
+// maskify(               "1") ==                "1"
+// maskify(                "") ==                 ""
+
+function maskify(cc) {
+  let hashed = cc.substr(0, cc.length-4).replace(/[0-9A-Za-z]/g, '#');
+  let show = cc.substr(cc.length-4)
+
+  return cc.length <=4 ? cc : hashed+show;
+}
+
 // Find the next perfect square! - https://www.codewars.com/kata/find-the-next-perfect-square/javascript
 
 // You might know some pretty large perfect squares. But what about the NEXT one?
