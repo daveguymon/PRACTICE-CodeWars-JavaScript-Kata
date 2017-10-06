@@ -1,3 +1,18 @@
+//Opposite Number - https://www.codewars.com/kata/opposite-number/javascript
+
+// Very simple, given a number, find its opposite.
+//
+// Examples:
+//
+// 1: -1
+// 14: -14
+// -34: 34
+// But can you do it in 1 line of code and without any conditionals?
+
+function opposite(number) {
+  return number - (number * 2);
+}
+
 // Even or Odd - https://www.codewars.com/kata/even-or-odd/javascript
 
 // Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
@@ -6,7 +21,7 @@ function even_or_odd(number) {
   return number % 2 === 0 ? "Even" : "Odd"
 }
 
-//Multiply -
+//Multiply - https://www.codewars.com/kata/multiply
 
 // The code does not execute properly. Try to figure out why.
 
