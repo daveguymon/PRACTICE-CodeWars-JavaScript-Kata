@@ -1,3 +1,28 @@
+// Number of Folds - https://www.codewars.com/kata/number-of-folds/javascript
+
+// Suppose I have a big paper and i want to draw n number of grids just by folding it (see example ). How many times do i have to fold it to get n number of grids. eg.
+//
+// n=1 , 0 operation, the original paper is one grid.
+//
+// n=2, 1 operations, i have to fold it 1 time to get 2 grids (A,B).
+//
+//  _______
+// |   |   |
+// | A | B |
+// |   |   |
+// |   |   |
+// |___|___|
+// No edge cases, all inputs are valid, But some built-in Math functions will have NO power here.
+
+function numberOfFolds(n){
+  let times = 0;
+  while(n > 1) {
+    times++;
+    n /= 2;
+  }
+  return times;
+}
+
 // Credit Card Mask - https://www.codewars.com/kata/credit-card-mask/javascript
 
 // Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
