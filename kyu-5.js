@@ -1,3 +1,15 @@
+// Break camelCase - https://www.codewars.com/kata/break-camelcase/javascript
+
+// Complete the solution so that the function will break up camel casing, using a space between words.
+//
+// Example
+//
+// solution('camelCasing') // => should return 'camel Casing'
+
+function solution(string) {
+  return string.split(/(?=[A-Z])/).join(' ');
+}
+
 // Two Joggers - https://www.codewars.com/kata/two-joggers/javascript
 
 // Your job is to complete the function nbrOfLaps(x, y) that, given the length of the laps for Bob and Charles, finds the number of laps that each jogger has to complete before they meet each other again, at the same time, at the start.
