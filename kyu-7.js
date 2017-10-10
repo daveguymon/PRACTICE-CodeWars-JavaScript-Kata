@@ -1,3 +1,20 @@
+// Move All Vowels - https://www.codewars.com/kata/move-all-vowels/javascript
+
+// Given a string as input, move all of its vowel to the end of the string.
+//
+// Example input: day Example output: dya
+//
+// Example input: apple Example output: pplae
+//
+// Note: All input string are of small letters, and the order of the vowels at the end should be the same as they were before.
+
+function moveVowel(input) {
+  let vowels = input.match(/[aeiou]/g),
+      noVowels = input.replace(/[aeiou]/g, '');
+
+  return vowels ? noVowels + vowels.join('') : noVowels;
+}
+
 // Number of Folds - https://www.codewars.com/kata/number-of-folds/javascript
 
 // Suppose I have a big paper and i want to draw n number of grids just by folding it (see example ). How many times do i have to fold it to get n number of grids. eg.
