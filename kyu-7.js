@@ -1,3 +1,21 @@
+// Alphabet Symmetry - https://www.codewars.com/kata/alphabet-symmetry/train/javascript
+
+// Consider the word "abode". We can see that the letter a is in position 1 and b is in position 2. In the alphabet, a and b are also in positions 1 and 2. Notice that d and e also occupy the positions they would occupy in the alphabet, which are positions 4 and 5.
+//
+// Given an array of words, return an array of the number of letters that occupy their positions in the alpahabet for each word. For example, solve(["abode","ABc","xyzD"]) = [4,3,1]. See test cases for more examples.
+//
+// Input will consist of alphabet characters, both uppercase and lowercase. No spaces.
+
+function solve(arr){
+ let toLower = arr.map(word => word.toLowerCase().split('')),
+     alphabet = "abcdefghijklmnopqrstuvwxyz".split(''),
+     numValue = toLower.map(word => word.map((letter,index,arr) => alphabet.indexOf(letter))),
+     matches = numValue.map(arrs => arrs.filter((val, index) => val === index)),
+     solution = matches.map(vals => vals.length);
+
+return solution;
+}
+
 // We Have Liftoff - https://www.codewars.com/kata/we-have-liftoff/javascript
 
 // You have an array of numbers 1 through n (where 1 <= n <= 10). The array needs to be formatted correctly for the person reading the countdown of a spaceship launch.
