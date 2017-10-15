@@ -1,3 +1,14 @@
+// Reversed String - https://www.codewars.com/kata/reversed-strings/javascript
+
+// Complete the solution so that it reverses the string value passed into it.
+//
+// solution('world'); // returns 'dlrow'
+
+function solution(str){
+  let solution = str.split('').reverse().join('');
+  return solution;
+}
+
 // Alphabet Symmetry - https://www.codewars.com/kata/alphabet-symmetry/train/javascript
 
 // Consider the word "abode". We can see that the letter a is in position 1 and b is in position 2. In the alphabet, a and b are also in positions 1 and 2. Notice that d and e also occupy the positions they would occupy in the alphabet, which are positions 4 and 5.
