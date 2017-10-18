@@ -1,3 +1,18 @@
+// Shortest Word - https://www.codewars.com/kata/shortest-word/javascript
+
+// Given a string of words, return the length of the shortest word(s).
+//
+// String will never be empty and you do not need to account for different data types.
+
+function findShort(s){
+  let lengths = [],
+      words = s.split(' ').forEach(word => {
+    return lengths.push(word.length);
+  });
+
+  return Math.min.apply(null, lengths);
+}
+
 // Reversed String - https://www.codewars.com/kata/reversed-strings/javascript
 
 // Complete the solution so that it reverses the string value passed into it.
