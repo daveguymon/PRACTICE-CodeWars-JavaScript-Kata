@@ -1,3 +1,27 @@
+// Highest Rank Number In Array - https://www.codewars.com/kata/highest-rank-number-in-an-array/javascript
+
+// Write a method highestRank(arr) (or highest-rank in clojure) which returns the number which is most frequent in the given input array (or ISeq). If there is a tie for most frequent number, return the largest number of which is most frequent.
+//
+// Example:
+//
+// arr = [12, 10, 8, 12, 7, 6, 4, 10, 12];
+// highestRank(arr) //=> returns 12
+
+function highestRank(arr){
+let nums = arr.reduce((obj,int) => {
+  if(!obj[int]){
+    obj[int] = 0;
+  }
+  obj[int]++;
+  return obj;
+}, {});
+
+ let solution = Object.keys(nums).reduce((a,b) => {
+   return nums[a] > nums[b] ? a : b;
+ });
+ return parseInt(solution);
+}
+
 // Equal Sides of An Array - https://www.codewars.com/kata/equal-sides-of-an-array/javascript
 
 // You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N. If there is no index that would make this happen, return -1.
