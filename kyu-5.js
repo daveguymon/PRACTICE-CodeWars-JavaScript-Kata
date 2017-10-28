@@ -50,7 +50,7 @@ function getPrimes(start, finish) {
    }
  }
 
-  return !primes ? '' : primes.join();
+  return primes.join();
 }
 
 // Break camelCase - https://www.codewars.com/kata/break-camelcase/javascript
