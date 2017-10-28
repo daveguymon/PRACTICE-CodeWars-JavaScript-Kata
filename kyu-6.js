@@ -1,3 +1,37 @@
+// Mirror Object = https://www.codewars.com/kata/mirror-object-tcejbo-rorrim/javascript
+
+// Can you mirror the properties on an object?
+//
+// Given an object with properties with no value
+//
+// abc: -
+// arara: -
+// xyz: -
+// Return a new object that have the properties with its mirrored key!
+//
+// abc: cba
+// arara: arara
+// xyz: zyx
+// "You cannot change the original object, because if you did that the reflection would change."
+
+const mirror = obj => {
+  let newArr = [];
+
+  let values = Object.keys(obj).map(key => {
+    return key.split('').reverse().join('');
+  });
+
+  let keys = Object.keys(obj);
+
+  for(var i = 0; i < keys.length; i++){
+    newArr.push(Array(keys[i], values[i]));
+  }
+
+  let solution = Object.assign(...newArr.map(([a,b]) => ({[a]: b}) ));
+
+  return solution;
+};
+
 // Highest Rank Number In Array - https://www.codewars.com/kata/highest-rank-number-in-an-array/javascript
 
 // Write a method highestRank(arr) (or highest-rank in clojure) which returns the number which is most frequent in the given input array (or ISeq). If there is a tie for most frequent number, return the largest number of which is most frequent.
