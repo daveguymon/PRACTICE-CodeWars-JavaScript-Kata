@@ -1,3 +1,25 @@
+// Your Order Please - https://www.codewars.com/kata/your-order-please/javascript
+
+// Your task is to sort a given string. Each word in the String will contain a single number. This number is the position the word should have in the result.
+//
+// Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+//
+// If the input String is empty, return an empty String. The words in the input String will only contain valid consecutive numbers.
+//
+// For an input: "is2 Thi1s T4est 3a" the function should return "Thi1s is2 3a T4est"
+//
+// your_order("is2 Thi1s T4est 3a")
+// [1] "Thi1s is2 3a T4est"
+
+function your_order(str){
+  var words = str.split(' ').map(String),
+      customSort = words.sort((a,b) => {
+        return (Number(a.match(/(\d+)/g)) - Number((b.match(/(\d+)/g))));
+      });
+
+ return customSort.join(' ');
+}
+
 // Mirror Object = https://www.codewars.com/kata/mirror-object-tcejbo-rorrim/javascript
 
 // Can you mirror the properties on an object?
