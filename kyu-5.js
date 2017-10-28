@@ -1,3 +1,58 @@
+// Prime Numbers - https://www.codewars.com/kata/prime-numbers/train/javascript
+
+// You will need to create logic for the following two functions: isPrime(number) and getPrimes(start, finish)
+//
+// isPrime(number)
+//
+// Should return boolean true if prime, otherwise false
+//
+// getPrimes(start, finish)
+
+// Should return a unique, sorted array of all primes in a given range (including the provided numbers, if they're prime). Note: start does not need to be the larger number.
+
+function isPrime(number) {
+  if(number < 2) {
+    return false;
+  } else if (number === 2) {
+    return true;
+  } else {
+    for(var i = 2; i < number; i++){
+      if(number % i === 0){
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+function getPrimes(start, finish) {
+  var min = 0,
+      max = Math.max(start, finish),
+      sliced = Math.min(start, finish),
+      bools = [],
+      primes = [];
+
+  for(var i = min > 1 ? min : 1; i < max; i++){
+    bools.push(true);
+  }
+
+  for(var j = 2; j <= max; j++){
+    if(bools[j-2]){
+     for(var k = j*2; k <= max; k+=j){
+       bools[k-2] = false;
+     }
+    }
+  }
+
+  for(var l = 0; l < bools.length; l++){
+   if(bools[l] === true && l+2 >= sliced){
+     primes.push(l+2);
+   }
+ }
+
+  return !primes ? '' : primes.join();
+}
+
 // Break camelCase - https://www.codewars.com/kata/break-camelcase/javascript
 
 // Complete the solution so that the function will break up camel casing, using a space between words.
