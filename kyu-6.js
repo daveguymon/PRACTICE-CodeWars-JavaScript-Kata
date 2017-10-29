@@ -1,3 +1,40 @@
+// Counting Duplicates - https://www.codewars.com/kata/counting-duplicates/javascript
+
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+//
+// Example
+//
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (bandB)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+function duplicateCount(text){
+  let toArr = text.toLowerCase().split(''),
+      instances = toArr.reduce(function(obj, char) {
+        if(char in obj) {
+          obj[char]++;
+        } else {
+          obj[char] = 1;
+        }
+        return obj;
+      }, {});
+
+  let charCount = Object.values(instances),
+      duplicates = [];
+
+      for(var i = 0; i < charCount.length; i++){
+        if(charCount[i] > 1) {
+          duplicates.push(true);
+        }
+      }
+
+      return duplicates.length;
+}
+
 // Your Order Please - https://www.codewars.com/kata/your-order-please/javascript
 
 // Your task is to sort a given string. Each word in the String will contain a single number. This number is the position the word should have in the result.
