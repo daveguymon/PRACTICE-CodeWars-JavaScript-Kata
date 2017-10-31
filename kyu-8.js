@@ -1,3 +1,11 @@
+// Remove First and Last Characters - https://www.codewars.com/kata/remove-first-and-last-character/javascript
+
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, except in C, where, to keep the difficulty at the level of the kata, you are given two parameters, the first a buffer with length exactly the same as the second parameter, the original string. You don't have to worry with strings with less than two characters.
+
+function removeChar(str){
+ return str.substr(1, str.length - 2);
+};
+
 // Merge Two Sorted Arrays Into One - https://www.codewars.com/kata/merge-two-sorted-arrays-into-one/javascript
 
 // You are given two sorted arrays that both only contain integers. Your task is to find a way to merge them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
