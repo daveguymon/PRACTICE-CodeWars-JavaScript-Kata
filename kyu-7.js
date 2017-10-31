@@ -1,3 +1,17 @@
+// Sum of Array Singles - https://www.codewars.com/kata/sum-of-array-singles/javascript
+
+// In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. Your task will be to return the sum of the numbers that occur only once.
+//
+// For example, repeats([4,5,7,5,4,8]) = 15 because only the numbers 7 and 8 occur once, and their sum is 15.
+
+function repeats(arr){
+  let addends = arr.filter((elem, i, array) => {
+    return array.indexOf(elem) === array.lastIndexOf(elem);
+  });
+
+  return addends.reduce((acc, curr) => acc + curr, 0);
+}
+
 // Sort By Last Char - https://www.codewars.com/kata/sort-by-last-char/javascript
 
 // Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
