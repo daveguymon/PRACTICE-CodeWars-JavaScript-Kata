@@ -1,3 +1,19 @@
+// Sort By Last Char - https://www.codewars.com/kata/sort-by-last-char/javascript
+
+// Given a string of words (x), you need to return an array of the words, sorted alphabetically by the final character in each.
+//
+// If two words have the same last letter, they returned array should show them in the order they appeared in the given string.
+//
+// All inputs will be valid.
+
+function last(x){
+  let words = x.split(' '),
+      ordered = words.sort((curr, next) => {
+      return curr.slice(-1) > next.slice(-1);
+    });
+    return ordered;
+}
+
 // Make them bark! - https://www.codewars.com/kata/make-them-bark/javascript
 
 // You have been hired by a dogbreeder to write a program to keep record of his dogs.
