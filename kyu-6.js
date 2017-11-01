@@ -1,3 +1,29 @@
+// Monkey Talk - https://www.codewars.com/kata/monkey-talk/javascript
+
+// Lets talk like a monkey. Find out how! Look at the test cases an engineer code to pass them.
+//
+// Sample Tests:
+// Test.assertEquals(monkeyTalk('Hello'), 'Ook.');
+// Test.assertEquals(monkeyTalk('Everyone'), 'Eek.');
+// Test.assertEquals(monkeyTalk('Hello Everyone'), 'Ook eek.');
+// Test.assertEquals(monkeyTalk('Everyone Hello'), 'Eek ook.')
+
+function monkeyTalk(phrase){
+  let translation = [];
+  phrase.split(' ').map(word => {
+    if (word.substring(0,1).match(/[aeiouAEIOU]/)){
+      translation.push("eek");
+    } else {
+      translation.push("ook");
+    }
+  });
+
+  let newString = translation.join(' ');
+  let monkeyTalk = newString.substring(0,1).toUpperCase() + newString.substring(1).toLowerCase() + '.';
+
+  return monkeyTalk;
+}
+
 // Counting Duplicates - https://www.codewars.com/kata/counting-duplicates/javascript
 
 // Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
