@@ -1,3 +1,14 @@
+// What's My Golf Score? - https://www.codewars.com/kata/whats-my-golf-score/javascript
+
+// Write the method golfScoreCalculator/GolfScoreCalculator which accepts two strings and calculates the golf score of a game. The two arguments can always be assumed to be strings. In Javascript, the length of these two strings will always match.
+
+function golfScoreCalculator(parList, scoreList){
+  let par = parList.split('').reduce((acc, cur) => parseInt(acc, 10) + parseInt(cur, 10), 0),
+      score = scoreList.split('').reduce((acc, cur) => parseInt(acc, 10) + parseInt(cur, 10), 0);
+
+      return score - par;
+}
+
 // Sum of Array Singles - https://www.codewars.com/kata/sum-of-array-singles/javascript
 
 // In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. Your task will be to return the sum of the numbers that occur only once.
