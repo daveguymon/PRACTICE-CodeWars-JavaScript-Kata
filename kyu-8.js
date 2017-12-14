@@ -1,3 +1,11 @@
+// Can We Divide It? - https://www.codewars.com/kata/5a2b703dc5e2845c0900005a
+
+//Your task is to create functionisDivideBy (or is_divide_by) to check if an integer number is divisible by each out of two arguments.
+
+function isDivideBy(number, a, b) {
+  return number % a === 0 && number % b === 0 ? true : false;
+}
+
 // Remove First and Last Characters - https://www.codewars.com/kata/remove-first-and-last-character/javascript
 
 // It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, except in C, where, to keep the difficulty at the level of the kata, you are given two parameters, the first a buffer with length exactly the same as the second parameter, the original string. You don't have to worry with strings with less than two characters.
